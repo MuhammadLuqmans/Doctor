@@ -12,6 +12,19 @@ body {
   color: #333333;
   line-height: 1.5;
 }
+.mytop{
+background-color: #456edf;
+transform: translateY(-70px);
+}
+
+.mytopFixed{
+  background-color: transparent;
+  transform: translateY(0px);
+  position: fixed;
+  top:0;
+  right:0;
+  left:0;
+  }
 
 ul {
   list-style: none;
