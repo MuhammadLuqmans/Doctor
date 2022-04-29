@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Navbar.css";
+import { Link } from "react-scroll";
 
 export default function Navbar() {
 
@@ -12,7 +13,9 @@ export default function Navbar() {
     if (window.pageYOffset < 100) {
     
       setnavSize("translateY(-70px)");
+      setnavColor('transparent')
       
+
       setTimeout(function () {
         setnavSize("translateY(0)");
      
@@ -32,34 +35,64 @@ export default function Navbar() {
   return (
     <div>
       <header className="hero" id="home">
+        <div className="headerStyle">
         <div
           className="navbar top border-3"
           id="navbar"
           style={{ transform: navSize, background:navColor }}
         >
           <h1 className="logo text-[35px] text-left">
-            <span className="text text-[35px] text-[#28a745]">
+            <span className="text text-[35px] text-[#28a745] mr-2">
               <i className="fas fa-user-md"></i>
-            </span>{" "}
+            </span>
             Dr. Pietro Lerro
-            <hr />{" "}
+            <hr />
             <small className="specialized">
-              Specialista in Pediatria, Pediatra Gastroenterologo{" "}
+              Specialista in Pediatria, Pediatra Gastroenterologo
             </small>
           </h1>
           <nav>
             <ul>
               <li>
-                <a href="#home" >Home</a>
+              <Link
+            activeClass="active"
+            to="home"
+            spy={true}
+            smooth={true}
+            offset={-100}
+            duration={500}
+          >
+            Home
+          </Link>
+               
               </li>
               <li>
-                <a href="#about" >Info</a>
+              <Link
+            activeClass="active"
+            to="about"
+            spy={true}
+            smooth={true}
+            offset={-100}
+            duration={500}
+          >
+            Info
+          </Link>
               </li>
               <li>
-                <a href="#contact">Contatti</a>
+              <Link
+            activeClass="active"
+            to="contact"
+            spy={true}
+            smooth={true}
+            offset={-100}
+            duration={500}
+          >
+            Contatti
+          </Link>
               </li>
             </ul>
           </nav>
+        </div>
         </div>
       </header>
     </div>
